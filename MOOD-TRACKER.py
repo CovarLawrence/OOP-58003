@@ -20,42 +20,42 @@ def view_moods():
         mood_text.insert(tk.END, moods_text)
 
 
-# Create the main window
+
 window = tk.Tk()
 window.title("Mood Tracker")
 
-# Create mood entry
+
 mood_label = ttk.Label(window, text="Enter your mood:")
 mood_label.pack()
 mood_entry = ttk.Entry(window)
 mood_entry.pack()
 
-# Create record mood button
+
 record_button = ttk.Button(window, text="Record Mood", command=record_mood)
 record_button.pack()
 
-# Create frame for displaying mood history
+
 mood_frame = ttk.Frame(window)
 mood_frame.pack()
 
-# Create mood history label and scrollbar
+
 history_label = ttk.Label(mood_frame, text="Mood History:")
 history_label.pack()
 scrollbar = ttk.Scrollbar(mood_frame)
 scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
-# Create text widget for mood history
+
 mood_text = tk.Text(mood_frame, yscrollcommand=scrollbar.set)
 mood_text.pack(fill=tk.BOTH, expand=True)
 scrollbar.config(command=mood_text.yview)
 
-# Create view mood button
+
 view_button = ttk.Button(window, text="View Moods", command=view_moods)
 view_button.pack()
 
-# Create status label
+
 status_label = ttk.Label(window, text="")
 status_label.pack()
 
-# Run the GUI main loop
+
 window.mainloop()
